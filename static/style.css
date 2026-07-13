@@ -1,0 +1,277 @@
+/* ===========================
+   General Styles
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* ===========================
+   BODY
+=========================== */
+
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:flex-start;
+
+    padding:30px;
+
+    color:#2c3e50;
+
+    background:
+    linear-gradient(rgba(255,255,255,.45),rgba(255,255,255,.45)),
+    linear-gradient(135deg,#dfefff,#eef8ff,#ffffff);
+
+    overflow-x:hidden;
+
+}
+
+/* ==========================================
+   Medical Background Icons
+========================================== */
+
+body::before{
+
+    content:
+    "🩺    💊    💉    🧬    ❤️    🏥    ⚕️\A\
+        💉    🫀    💊    🧪    🩺    ❤️    💊\A\
+     🏥    🧬    💉    ❤️    💊    🩺    🧪\A\
+        🫀    💊    🩺    ⚕️    💉    ❤️    🏥\A\
+     🧬    🩹    💊    ❤️    🩺    💉    🧪\A\
+        🩺    💊    🫀    🧬    🏥    ❤️    💉\A\
+     💉    🩺    ❤️    🧪    💊    🧬    🫀\A\
+        🏥    💊    💉    🩺    ❤️    🧪    🫀";
+
+    position:fixed;
+
+    inset:0;
+
+    white-space:pre;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    line-height:120px;
+
+    letter-spacing:45px;
+
+    font-size:42px;
+
+    opacity:.08;
+
+    pointer-events:none;
+
+    z-index:-1;
+
+}
+  
+h1{
+    color:#1565c0;
+    margin-bottom:25px;
+    text-align:center;
+}
+
+/* ===========================
+   Upload Form
+=========================== */
+
+form{
+    width:100%;
+    max-width:600px;
+    background:#fff;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    margin-bottom:30px;
+}
+
+label{
+    display:block;
+    font-weight:bold;
+    margin-bottom:12px;
+    color:#34495e;
+}
+
+input[type=file]{
+    width:100%;
+    padding:12px;
+    border:2px dashed #90caf9;
+    border-radius:8px;
+    background:#f8fbff;
+    cursor:pointer;
+    margin-bottom:20px;
+}
+
+input[type=file]:hover{
+    border-color:#1976d2;
+}
+
+input[type=submit]{
+    width:100%;
+    background:#1976d2;
+    color:white;
+    border:none;
+    padding:14px;
+    border-radius:8px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+input[type=submit]:hover{
+    background:#0d47a1;
+}
+
+/* ===========================
+   Result Container
+=========================== */
+
+.result-container{
+    width:100%;
+    max-width:900px;
+    background:#fff;
+    border-radius:12px;
+    padding:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    border-left:6px solid #2ecc71;
+    margin-top:20px;
+}
+
+/* ===========================
+   Analysis Header
+=========================== */
+
+.result-container h3{
+    color:#2c3e50;
+    font-size:22px;
+}
+
+.result-container span{
+    font-size:13px;
+}
+
+/* ===========================
+   AI Analysis
+=========================== */
+
+.analysis-content{
+    margin-top:15px;
+    color:#34495e;
+    line-height:1.8;
+    font-size:15px;
+}
+
+.analysis-content h2,
+.analysis-content h3,
+.analysis-content h4{
+    color:#1565c0;
+    margin-top:20px;
+    margin-bottom:10px;
+}
+
+.analysis-content p{
+    margin-bottom:12px;
+}
+
+.analysis-content ul{
+    list-style:none;
+    padding-left:0;
+}
+
+.analysis-content li{
+    margin-bottom:18px;
+    padding:15px;
+    background:#f8fbff;
+    border-left:5px solid #64b5f6;
+    border-radius:8px;
+}
+
+.analysis-content li strong{
+    display:inline-block;
+    color:#1565c0;
+    font-size:16px;
+    margin-bottom:6px;
+}
+
+/* ===========================
+   Tables
+=========================== */
+
+.analysis-content table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:15px;
+}
+
+.analysis-content table,
+.analysis-content th,
+.analysis-content td{
+    border:1px solid #ddd;
+}
+
+.analysis-content th{
+    background:#1976d2;
+    color:white;
+    padding:10px;
+}
+
+.analysis-content td{
+    padding:10px;
+}
+
+/* ===========================
+   Code
+=========================== */
+
+.analysis-content code{
+    background:#f1f1f1;
+    padding:2px 5px;
+    border-radius:4px;
+}
+
+.analysis-content pre{
+    background:#263238;
+    color:white;
+    padding:15px;
+    border-radius:8px;
+    overflow:auto;
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media(max-width:768px){
+
+    form,
+    .result-container{
+        width:95%;
+    }
+
+    h1{
+        font-size:28px;
+    }
+
+    .result-container h3{
+        font-size:18px;
+    }
+
+}

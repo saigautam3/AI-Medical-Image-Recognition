@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Medical Image Recognition App</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <h1>🏥 Medical Image Recognition System</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+
+        <label for="file">
+            Upload a Medical Image
+        </label>
+
+        <input
+            type="file"
+            id="file"
+            name="file"
+            accept=".jpg,.jpeg,.png"
+            required
+            onchange="previewImage(event)"
+        >
+
+        <img
+            id="preview"
+            src=""
+            alt="Image Preview"
+            style="display:none; width:250px; margin:20px auto; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,.2);"
+        >
+
+        <input
+            type="submit"
+            value="🔍 Generate Medical Description"
+        >
+
+    </form>
+
+    {% if response_text %}
+
+    <div class="result-container">
+
+        <div style="
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            border-bottom:1px solid #ecf0f1;
+            padding-bottom:12px;
+            margin-bottom:20px;
+            flex-wrap:wrap;
+            gap:10px;">
+
+            <h3>📋 AI Medical Analysis Report</h3>
+
+            <span style="
+                background:#e8f5e9;
+                color:#2e7d32;
+                padding:6px 14px;
+                border-radius:25px;
+                font-size:13px;
+                font-weight:bold;
+                border:1px solid #c8e6c9;">
+
+                ✓ AI ANALYSIS COMPLETED
+
+            </span>
+
+        </div>
+
+        <div class="analysis-content">
+
+            {{ response_text | safe }}
+
+        </div>
+
+    </div>
+
+    {% endif %}
+
+<script>
+
+function previewImage(event){
+
+    const preview=document.getElementById("preview");
+
+    preview.src=URL.createObjectURL(event.target.files[0]);
+
+    preview.style.display="block";
+
+}
+
+</script>
+
+</body>
+
+</html>
