@@ -4,7 +4,7 @@
 
 -- Developed an AI-powered web application that analyzes uploaded medical images using Google Gemini Vision and generates clinically relevant medical descriptions. Implemented automated medical image validation, secure API integration using environment variables, improved error handling, optimized application stability through bug fixes and code refactoring, and delivered a responsive Flask-based user interface.
 
-## Why This Project?
+## Why This?
 Medical image interpretation requires expertise and time.
 This application demonstrates how Google Gemini Vision can assist by analyzing uploaded medical images, validating medical relevance, and generating AI-powered clinical descriptions through a simple Flask web interface.
 
