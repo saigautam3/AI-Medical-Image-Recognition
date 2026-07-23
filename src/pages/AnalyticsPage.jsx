@@ -155,7 +155,7 @@ const AnalyticsPage = () => {
           </div>
           <div>
             <p className="text-xs font-bold text-slate-400 uppercase tracking-wider">Total Scans</p>
-            <h3 className="text-2xl font-extrabold text-slate-850 dark:text-white mt-1">{stats.total}</h3>
+            <h3 className="text-2xl font-extrabold text-slate-800 dark:text-white mt-1">{stats.total}</h3>
           </div>
         </div>
 
@@ -166,7 +166,7 @@ const AnalyticsPage = () => {
           </div>
           <div>
             <p className="text-xs font-bold text-slate-400 uppercase tracking-wider">Validation Rate</p>
-            <h3 className="text-2xl font-extrabold text-slate-850 dark:text-white mt-1">{stats.validPercent}%</h3>
+            <h3 className="text-2xl font-extrabold text-slate-800 dark:text-white mt-1">{stats.validPercent}%</h3>
           </div>
         </div>
 
@@ -177,7 +177,7 @@ const AnalyticsPage = () => {
           </div>
           <div>
             <p className="text-xs font-bold text-slate-400 uppercase tracking-wider">Avg Process Time</p>
-            <h3 className="text-2xl font-extrabold text-slate-850 dark:text-white mt-1">{stats.avgLatency}</h3>
+            <h3 className="text-2xl font-extrabold text-slate-800 dark:text-white mt-1">{stats.avgLatency}</h3>
           </div>
         </div>
 
@@ -188,7 +188,7 @@ const AnalyticsPage = () => {
           </div>
           <div>
             <p className="text-xs font-bold text-slate-400 uppercase tracking-wider">Top Subject Class</p>
-            <h3 className="text-2xl font-extrabold text-slate-850 dark:text-white mt-1 truncate max-w-[150px]">
+            <h3 className="text-2xl font-extrabold text-slate-800 dark:text-white mt-1 truncate max-w-[150px]">
               {stats.popularCategory}
             </h3>
           </div>
@@ -267,7 +267,7 @@ const AnalyticsPage = () => {
                   <div className="w-3 h-3 rounded-full" style={{ backgroundColor: COLORS[idx] }} />
                   <span>{item.name}</span>
                 </div>
-                <span className="font-extrabold text-slate-850 dark:text-slate-200">{item.value}</span>
+                <span className="font-extrabold text-slate-800 dark:text-slate-200">{item.value}</span>
               </div>
             ))}
           </div>

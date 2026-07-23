@@ -73,7 +73,7 @@ const SettingsPage = () => {
         
         <button
           onClick={checkStatus}
-          className="p-2 border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-850 hover:text-sky-500 rounded-xl transition-all duration-200 flex items-center gap-1.5 text-xs font-bold text-slate-600 dark:text-slate-350"
+          className="p-2 border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-sky-500 rounded-xl transition-all duration-200 flex items-center gap-1.5 text-xs font-bold text-slate-600 dark:text-slate-350"
         >
           <RefreshCw className="h-3.5 w-3.5" />
           <span>Refresh</span>
@@ -103,7 +103,7 @@ const SettingsPage = () => {
                     className={`p-3 rounded-2xl border text-xs font-bold capitalize transition-all duration-200 ${
                       theme === mode
                         ? 'bg-sky-50 border-sky-500 text-sky-600 dark:bg-sky-950/30 dark:border-sky-400 dark:text-sky-400'
-                        : 'border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-850 text-slate-600 dark:text-slate-300'
+                        : 'border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300'
                     }`}
                   >
                     {mode} Theme
@@ -116,7 +116,7 @@ const SettingsPage = () => {
                     const system = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
                     setTheme(system);
                   }}
-                  className="p-3 rounded-2xl border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-850 text-xs font-bold text-slate-600 dark:text-slate-300 transition-all duration-200"
+                  className="p-3 rounded-2xl border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 text-xs font-bold text-slate-600 dark:text-slate-300 transition-all duration-200"
                 >
                   System default
                 </button>
@@ -124,7 +124,7 @@ const SettingsPage = () => {
             </div>
 
             {/* Notifications Toggle */}
-            <div className="flex items-center justify-between border-t border-slate-100 dark:border-slate-850 pt-6">
+            <div className="flex items-center justify-between border-t border-slate-100 dark:border-slate-800 pt-6">
               <div className="space-y-1">
                 <h4 className="text-sm font-bold text-slate-800 dark:text-slate-100 flex items-center gap-1.5">
                   <Bell className="h-4 w-4 text-indigo-500" />
@@ -150,7 +150,7 @@ const SettingsPage = () => {
           <div className="p-6 bg-slate-50 dark:bg-slate-900/50 border border-slate-200/60 dark:border-slate-800/60 rounded-3xl flex items-start gap-4">
             <Info className="h-5 w-5 text-slate-400 shrink-0 mt-0.5" />
             <div className="space-y-2">
-              <h4 className="text-sm font-bold text-slate-750 dark:text-slate-200">Application Architecture</h4>
+              <h4 className="text-sm font-bold text-slate-700 dark:text-slate-200">Application Architecture</h4>
               <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
                 This Single Page Application utilizes a Python Flask REST backend to serve a fast React frontend compiled by Vite. Gemini Vision acts as the key reasoning agent, with all image files stored locally on this machine using browser-level IndexedDB configurations.
               </p>
@@ -222,9 +222,9 @@ const SettingsPage = () => {
             </div>
 
             {/* Model Name */}
-            <div className="space-y-1.5 border-t border-slate-100 dark:border-slate-850 pt-4">
+            <div className="space-y-1.5 border-t border-slate-100 dark:border-slate-800 pt-4">
               <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Active LLM Engine</span>
-              <div className="flex items-center gap-1.5 text-xs font-bold text-slate-750 dark:text-slate-350">
+              <div className="flex items-center gap-1.5 text-xs font-bold text-slate-700 dark:text-slate-350">
                 <Cpu className="h-3.5 w-3.5 text-indigo-500" />
                 <span>{activeModel}</span>
               </div>
@@ -233,7 +233,7 @@ const SettingsPage = () => {
             {/* Version */}
             <div className="space-y-1.5">
               <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Software Version</span>
-              <div className="flex items-center gap-1.5 text-xs font-bold text-slate-750 dark:text-slate-350">
+              <div className="flex items-center gap-1.5 text-xs font-bold text-slate-700 dark:text-slate-350">
                 <Info className="h-3.5 w-3.5 text-slate-400" />
                 <span>{version} (Vite-Tailwind Redesign)</span>
               </div>

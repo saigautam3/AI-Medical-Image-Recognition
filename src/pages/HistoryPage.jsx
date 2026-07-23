@@ -77,14 +77,14 @@ const HistoryItem = ({ report, onDelete, onView }) => {
       <div className="flex items-center gap-2 self-end sm:self-center">
         <button
           onClick={() => onView(report)}
-          className="p-2 border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-850 hover:text-sky-500 rounded-xl text-slate-500 dark:text-slate-400 transition-colors duration-200"
+          className="p-2 border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-sky-500 rounded-xl text-slate-500 dark:text-slate-400 transition-colors duration-200"
           title="View Details"
         >
           <Eye className="h-4 w-4" />
         </button>
         <button
           onClick={() => exportReportToPDF({ ...report, rawResponse: report.rawResponse })}
-          className="p-2 border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-850 hover:text-sky-500 rounded-xl text-slate-500 dark:text-slate-400 transition-colors duration-200"
+          className="p-2 border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-sky-500 rounded-xl text-slate-500 dark:text-slate-400 transition-colors duration-200"
           title="Export PDF"
         >
           <Download className="h-4 w-4" />
@@ -140,7 +140,7 @@ const HistoryPage = () => {
           >
             <button
               onClick={handleCloseDetails}
-              className="flex items-center gap-2 px-4 py-2 border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-850 hover:border-slate-350 rounded-xl text-xs font-bold text-slate-600 dark:text-slate-300 transition-all duration-200"
+              className="flex items-center gap-2 px-4 py-2 border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 hover:border-slate-350 rounded-xl text-xs font-bold text-slate-600 dark:text-slate-300 transition-all duration-200"
             >
               <ArrowLeft className="h-4 w-4" />
               <span>Back to History</span>
@@ -180,7 +180,7 @@ const HistoryPage = () => {
               {reports.length > 0 && (
                 <button
                   onClick={clearHistory}
-                  className="px-4 py-2 border border-rose-200 hover:bg-rose-50 dark:border-rose-900/30 dark:hover:bg-rose-950/20 text-rose-500 dark:text-rose-450 text-xs font-bold rounded-xl transition-colors duration-200"
+                  className="px-4 py-2 border border-rose-200 hover:bg-rose-50 dark:border-rose-900/30 dark:hover:bg-rose-950/20 text-rose-500 dark:text-rose-400 text-xs font-bold rounded-xl transition-colors duration-200"
                 >
                   Clear All History
                 </button>
@@ -224,13 +224,13 @@ const HistoryPage = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-800 dark:text-slate-100">No Reports Yet</h3>
-                  <p className="mt-2 text-sm text-slate-500 dark:text-slate-450 leading-relaxed">
+                  <p className="mt-2 text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
                     You haven't run any clinical image evaluations yet. Analyses performed locally will appear here.
                   </p>
                 </div>
                 <button
                   onClick={() => navigate('/dashboard')}
-                  className="inline-flex items-center gap-1.5 px-6 py-3 bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-650 hover:to-indigo-750 text-white rounded-2xl text-xs font-extrabold shadow-md shadow-sky-500/10 hover:shadow-lg transition-all duration-200"
+                  className="inline-flex items-center gap-1.5 px-6 py-3 bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-600 hover:to-indigo-700 text-white rounded-2xl text-xs font-extrabold shadow-md shadow-sky-500/10 hover:shadow-lg transition-all duration-200"
                 >
                   <Plus className="h-4 w-4" />
                   <span>Analyze Your First Image</span>

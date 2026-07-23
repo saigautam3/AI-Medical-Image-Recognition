@@ -160,7 +160,7 @@ const ImageUpload = ({ onImageSelected, selectedImage, onClear }) => {
             </div>
 
             {/* Preview Image */}
-            <div className="max-h-[350px] w-full flex items-center justify-center overflow-hidden rounded-2xl bg-white dark:bg-slate-955 border border-slate-200/40 dark:border-slate-800/40">
+            <div className="max-h-[350px] w-full flex items-center justify-center overflow-hidden rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/40 dark:border-slate-800/40">
               <img
                 src={preview}
                 alt="Uploaded Medical Subject"
@@ -219,7 +219,7 @@ const ImageUpload = ({ onImageSelected, selectedImage, onClear }) => {
 
       {/* Zoom Modal */}
       {zoomOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-955/80 backdrop-blur-sm">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
           <div className="relative max-w-4xl w-full bg-white dark:bg-slate-900 rounded-3xl p-3 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-2xl flex flex-col">
             <button
               onClick={() => setZoomOpen(false)}
@@ -227,7 +227,7 @@ const ImageUpload = ({ onImageSelected, selectedImage, onClear }) => {
             >
               <X className="h-5 w-5" />
             </button>
-            <div className="max-h-[80vh] overflow-auto flex justify-center bg-slate-50 dark:bg-slate-955 rounded-2xl">
+            <div className="max-h-[80vh] overflow-auto flex justify-center bg-slate-50 dark:bg-slate-900 rounded-2xl">
               <img
                 src={preview}
                 alt="Zoomed Medical Subject"

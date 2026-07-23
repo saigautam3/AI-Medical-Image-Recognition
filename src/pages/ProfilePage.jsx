@@ -51,7 +51,7 @@ const ProfilePage = () => {
         {/* Stats Column */}
         <div className="md:col-span-1 space-y-6">
           <div className="p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl space-y-6">
-            <h3 className="text-base font-bold text-slate-850 dark:text-white">Practice Summary</h3>
+            <h3 className="text-base font-bold text-slate-800 dark:text-white">Practice Summary</h3>
 
             {/* Total reports */}
             <div className="flex items-center gap-3">
@@ -93,7 +93,7 @@ const ProfilePage = () => {
         {/* Activity Logs Column */}
         <div className="md:col-span-2 space-y-6">
           <div className="p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl space-y-6">
-            <h3 className="text-base font-bold text-slate-850 dark:text-white">Device Audit Feed</h3>
+            <h3 className="text-base font-bold text-slate-800 dark:text-white">Device Audit Feed</h3>
 
             {activityLogs.length > 0 ? (
               <div className="space-y-6">

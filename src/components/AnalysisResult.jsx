@@ -233,7 +233,7 @@ const AnalysisResult = ({ result, imageFile, onRegenerate, onReset }) => {
         <div className="lg:col-span-4 space-y-6">
           <div className="sticky top-24 space-y-4">
             <div className="rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white dark:bg-slate-900 p-3 shadow-md">
-              <div className="h-64 w-full rounded-2xl overflow-hidden bg-slate-50 dark:bg-slate-950 flex items-center justify-center border border-slate-100 dark:border-slate-850">
+              <div className="h-64 w-full rounded-2xl overflow-hidden bg-slate-50 dark:bg-slate-950 flex items-center justify-center border border-slate-100 dark:border-slate-800">
                 <img
                   src={imageSrc}
                   alt="Clinical analysis subject"
@@ -277,7 +277,7 @@ const AnalysisResult = ({ result, imageFile, onRegenerate, onReset }) => {
                 className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-xs font-bold transition-all duration-200 ${
                   isSimplified
                     ? 'bg-sky-500 border-sky-600 text-white shadow-md shadow-sky-500/20'
-                    : 'border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-880'
+                    : 'border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'
                 }`}
                 title="Explain medical vocabulary in simpler terms"
               >
@@ -290,7 +290,7 @@ const AnalysisResult = ({ result, imageFile, onRegenerate, onReset }) => {
                 className={`p-2 rounded-xl border text-xs font-bold transition-all duration-200 ${
                   isPlayingSpeech
                     ? 'bg-indigo-500 border-indigo-600 text-white shadow-md shadow-indigo-500/20 animate-pulse'
-                    : 'border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-880'
+                    : 'border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'
                 }`}
                 title={isPlayingSpeech ? 'Stop speech' : 'Read report aloud'}
               >
@@ -327,7 +327,7 @@ const AnalysisResult = ({ result, imageFile, onRegenerate, onReset }) => {
           </div>
 
           <div className="p-5 rounded-3xl border border-rose-200/50 dark:border-rose-900/20 bg-rose-50/30 dark:bg-rose-950/10 space-y-2">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-rose-600 dark:text-rose-450 flex items-center gap-1.5">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-rose-600 dark:text-rose-455 flex items-center gap-1.5">
               <Info className="h-4 w-4 shrink-0" />
               Medical Disclaimer
             </h4>
@@ -355,7 +355,7 @@ const AnalysisResult = ({ result, imageFile, onRegenerate, onReset }) => {
                   <span>Share Report</span>
                 </button>
                 {showShareTooltip && (
-                  <div className="absolute top-full mt-2 left-1/2 -translate-x-1/2 px-2.5 py-1 bg-slate-850 dark:bg-slate-800 text-white text-[10px] font-bold rounded-lg shadow-md whitespace-nowrap z-20">
+                  <div className="absolute top-full mt-2 left-1/2 -translate-x-1/2 px-2.5 py-1 bg-slate-800 dark:bg-slate-800 text-white text-[10px] font-bold rounded-lg shadow-md whitespace-nowrap z-20">
                     Copied sharing URL!
                   </div>
                 )}
@@ -365,7 +365,7 @@ const AnalysisResult = ({ result, imageFile, onRegenerate, onReset }) => {
             <div className="flex items-center gap-2">
               <button
                 onClick={() => exportReportToPDF({ ...result, id: result.id || 'temp-id', rawResponse: result.raw_response || result.rawResponse })}
-                className="flex items-center gap-1 px-3 py-2 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-750 text-slate-700 dark:text-slate-300 rounded-xl text-xs font-bold transition-all duration-200"
+                className="flex items-center gap-1 px-3 py-2 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-xl text-xs font-bold transition-all duration-200"
                 title="Export as PDF"
               >
                 <Download className="h-3.5 w-3.5" />
@@ -373,14 +373,14 @@ const AnalysisResult = ({ result, imageFile, onRegenerate, onReset }) => {
               </button>
               <button
                 onClick={() => exportReportToTXT({ ...result, id: result.id || 'temp-id', rawResponse: result.raw_response || result.rawResponse })}
-                className="px-3 py-2 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-750 text-slate-700 dark:text-slate-300 rounded-xl text-xs font-bold transition-all duration-200"
+                className="px-3 py-2 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-xl text-xs font-bold transition-all duration-200"
                 title="Export as TXT"
               >
                 TXT
               </button>
               <button
                 onClick={() => exportReportToMD({ ...result, id: result.id || 'temp-id', rawResponse: result.raw_response || result.rawResponse })}
-                className="px-3 py-2 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-750 text-slate-700 dark:text-slate-300 rounded-xl text-xs font-bold transition-all duration-200"
+                className="px-3 py-2 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-xl text-xs font-bold transition-all duration-200"
                 title="Export as Markdown"
               >
                 MD
@@ -390,14 +390,14 @@ const AnalysisResult = ({ result, imageFile, onRegenerate, onReset }) => {
             <div className="flex items-center gap-2">
               <button
                 onClick={onRegenerate}
-                className="p-2.5 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-750 text-slate-700 dark:text-slate-300 rounded-xl transition-all duration-200"
+                className="p-2.5 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-xl transition-all duration-200"
                 title="Regenerate Report"
               >
                 <RotateCcw className="h-4 w-4" />
               </button>
               <button
                 onClick={onReset}
-                className="flex items-center gap-1.5 px-4 py-2.5 bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-650 hover:to-indigo-750 text-white rounded-xl text-xs font-extrabold shadow-md shadow-sky-500/10 hover:shadow-lg transition-all duration-200"
+                className="flex items-center gap-1.5 px-4 py-2.5 bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-600 hover:to-indigo-700 text-white rounded-xl text-xs font-extrabold shadow-md shadow-sky-500/10 hover:shadow-lg transition-all duration-200"
               >
                 <span>Analyze Another</span>
                 <ArrowRight className="h-3.5 w-3.5" />

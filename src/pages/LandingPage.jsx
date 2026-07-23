@@ -78,7 +78,7 @@ const LandingPage = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-sky-200/50 bg-sky-500/10 dark:border-sky-850 dark:bg-sky-950/20 text-sky-600 dark:text-sky-400 text-xs font-bold uppercase tracking-wider shadow-sm"
+            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-sky-200/50 bg-sky-500/10 dark:border-slate-800 dark:bg-sky-950/20 text-sky-600 dark:text-sky-400 text-xs font-bold uppercase tracking-wider shadow-sm"
           >
             <Activity className="h-3.5 w-3.5 animate-pulse text-sky-500" />
             <span>AI Diagnostic Engine v1.0 Active</span>
@@ -113,14 +113,14 @@ const LandingPage = () => {
           >
             <button
               onClick={() => navigate('/dashboard')}
-              className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-650 hover:to-indigo-750 text-white font-extrabold rounded-2xl shadow-xl shadow-sky-500/25 dark:shadow-none hover:scale-103 transform transition-all duration-200 text-base"
+              className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-600 hover:to-indigo-700 text-white font-extrabold rounded-2xl shadow-xl shadow-sky-500/25 dark:shadow-none hover:scale-103 transform transition-all duration-200 text-base"
             >
               <span>Analyze Image</span>
               <ArrowRight className="h-5 w-5" />
             </button>
             <a
               href="#features"
-              className="w-full sm:w-auto flex items-center justify-center gap-1.5 px-8 py-4 border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 hover:bg-slate-50 dark:hover:bg-slate-850 hover:border-slate-350 dark:hover:border-slate-700 text-slate-700 dark:text-slate-300 font-bold rounded-2xl transition-all duration-200 text-base backdrop-blur-sm"
+              className="w-full sm:w-auto flex items-center justify-center gap-1.5 px-8 py-4 border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 hover:bg-slate-50 dark:hover:bg-slate-800 hover:border-slate-350 dark:hover:border-slate-700 text-slate-700 dark:text-slate-300 font-bold rounded-2xl transition-all duration-200 text-base backdrop-blur-sm"
             >
               <span>Learn More</span>
             </a>

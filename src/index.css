@@ -36,8 +36,18 @@
     @apply bg-slate-50 text-slate-900 font-sans transition-colors duration-300 antialiased;
   }
   
-  body.dark {
+  /* Tailwind v4 class-based dark mode: dark class is on <html>, so use :is(.dark body) */
+  :is(.dark body), .dark body {
     @apply bg-slate-950 text-slate-50;
+  }
+
+  /* Ensure html itself has the right background to prevent white flash on edges */
+  html {
+    @apply bg-slate-50;
+  }
+  
+  html.dark {
+    @apply bg-slate-950;
   }
 }
 
@@ -100,6 +110,7 @@
   animation: gradientBG 15s ease infinite;
 }
 
+html.dark .animated-bg,
 .dark .animated-bg {
   background: linear-gradient(-45deg, #020617, #0f172a, #1e1b4b, #0f172a);
   background-size: 400% 400%;

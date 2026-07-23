@@ -151,7 +151,7 @@ const DashboardPage = () => {
                   >
                     <AlertCircle className="h-5 w-5 text-rose-500 shrink-0 mt-0.5" />
                     <div>
-                      <h4 className="text-sm font-bold text-rose-800 dark:text-rose-455">Analysis Failed</h4>
+                      <h4 className="text-sm font-bold text-rose-800 dark:text-rose-400">Analysis Failed</h4>
                       <p className="text-xs text-rose-700/80 dark:text-rose-400/80 mt-0.5 leading-relaxed">{error}</p>
                     </div>
                   </motion.div>
@@ -165,13 +165,13 @@ const DashboardPage = () => {
                   >
                     <button
                       onClick={handleClear}
-                      className="px-5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-850 text-slate-700 dark:text-slate-350 text-xs font-bold transition-all duration-200"
+                      className="px-5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-350 text-xs font-bold transition-all duration-200"
                     >
                       Clear
                     </button>
                     <button
                       onClick={handleAnalyze}
-                      className="px-6 py-2.5 bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-650 hover:to-indigo-750 text-white rounded-xl text-xs font-extrabold shadow-md shadow-sky-500/10 hover:shadow-lg transition-all duration-200"
+                      className="px-6 py-2.5 bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-600 hover:to-indigo-700 text-white rounded-xl text-xs font-extrabold shadow-md shadow-sky-500/10 hover:shadow-lg transition-all duration-200"
                     >
                       Generate Diagnosis
                     </button>
