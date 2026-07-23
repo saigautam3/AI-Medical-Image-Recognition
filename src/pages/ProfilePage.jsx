@@ -32,9 +32,9 @@ const ProfilePage = () => {
         {/* Profile Info */}
         <div className="text-center sm:text-left space-y-2">
           <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-            <h2 className="text-2xl font-extrabold text-slate-900 dark:text-white">Dr. Sai Gautam, MD</h2>
+            <h2 className="text-2xl font-extrabold text-slate-900 dark:text-white">User</h2>
             <span className="inline-flex items-center gap-1 px-2.5 py-0.5 bg-sky-100/50 dark:bg-sky-950/40 text-sky-600 dark:text-sky-400 text-[10px] font-extrabold uppercase tracking-wider rounded-md border border-sky-200/20">
-              <Award className="h-3 w-3" /> Resident Radiologist
+              <Award className="h-3 w-3" /> Tester
             </span>
           </div>
           <p className="text-sm text-slate-500 dark:text-slate-400 font-medium">
