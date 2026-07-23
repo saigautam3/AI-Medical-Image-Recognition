@@ -38,7 +38,7 @@ const ProfilePage = () => {
             </span>
           </div>
           <p className="text-sm text-slate-500 dark:text-slate-400 font-medium">
-            Clinical Specialist • AI Medical Vision Assistant
+            Tester
           </p>
           <div className="text-xs text-slate-400 dark:text-slate-500">
             Active workspace: <code>e:/Projects/Modified Medicine-Recognition-System</code>
@@ -100,14 +100,13 @@ const ProfilePage = () => {
                 {activityLogs.map((log, idx) => (
                   <div key={log.id} className="flex gap-3 items-start">
                     <div className="mt-1 flex flex-col items-center">
-                      <div className={`w-3.5 h-3.5 rounded-full shrink-0 ${
-                        log.valid ? 'bg-sky-500 shadow-md shadow-sky-500/20' : 'bg-rose-500 shadow-md shadow-rose-500/20'
-                      }`} />
+                      <div className={`w-3.5 h-3.5 rounded-full shrink-0 ${log.valid ? 'bg-sky-500 shadow-md shadow-sky-500/20' : 'bg-rose-500 shadow-md shadow-rose-500/20'
+                        }`} />
                       {idx !== activityLogs.length - 1 && (
                         <div className="w-0.5 h-12 bg-slate-100 dark:bg-slate-800 mt-1" />
                       )}
                     </div>
-                    
+
                     <div className="space-y-1">
                       <p className="text-xs font-bold text-slate-700 dark:text-slate-250 leading-relaxed">
                         {log.action}
