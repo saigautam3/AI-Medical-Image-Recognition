@@ -1,114 +1,120 @@
-<h1 align="center">
-🏥 AI Medical Image Recognition & Clinical Description Generator
-</h1>
+# 🏥 AI Medical Vision - Image Recognition & Clinical Description Generator
 
--- Developed an AI-powered web application that analyzes uploaded medical images using Google Gemini Vision and generates clinically relevant medical descriptions. Implemented automated medical image validation, secure API integration using environment variables, improved error handling, optimized application stability through bug fixes and code refactoring, and delivered a responsive Flask-based user interface.
+An advanced, production-ready AI healthcare Single Page Application (SPA) designed to analyze medical images, validate clinical relevance using Google Gemini Vision, and generate detailed observations, findings, and recommendations.
 
-<h3 align="center">
-🚀 <a href="http://127.0.0.1:5000/">Live Demo</a>
-</h3>
+---
 
-## Why This?
-Medical image interpretation requires expertise and time.
-This application demonstrates how Google Gemini Vision can assist by analyzing uploaded medical images, validating medical relevance, and generating AI-powered clinical descriptions through a simple Flask web interface.
+## 🚀 Key Features
 
-# ✨ Key Features
-- 🤖 Google Gemini Vision integration
-- 🩺 AI-powered medical image analysis
-- 📋 Clinical description generation
-- ✅ Intelligent medical image validation
-- ⚡ Fast real-time inference
-- 🔒 Secure API integration
-- 🌐 Flask-based backend
-- 🎨 Responsive user interface
-- 🛠 Optimized & refactored codebase
-- 📈 Scalable project architecture
+*   **Premium SaaS UI**: Sleek, responsive, and futuristic interface with smooth dark/light mode toggling, custom glassmorphic cards, and fade animations.
+*   **Intelligent Screening**: Automated medical validation filters non-medical images to ensure diagnostic reliability.
+*   **Multi-Step Analysis Stepper**: Beautiful loading pipeline showing checklist steps: *Uploading ➜ Analyzing ➜ Validating ➜ Generating ➜ Completed*.
+*   **Structured observations**: Interactive sections dividing results into Observations, Possible Findings, Recommendations, and a Clinical Disclaimer.
+*   **Medical Jargon Simplifier**: Explains complex medical jargon in clear, patient-friendly layman terms.
+*   **Speech Synthesis Reader**: Reads observations and reports aloud using native browser Web Speech API.
+*   **Multi-Format Exporter**: Download clinical reports in custom print-ready PDF, Markdown (MD), or raw text (TXT) formats.
+*   **Local History & compliance**: Fully HIPAA & GDPR compliant local-first design storing report logs in `localStorage` and image files locally in browser `IndexedDB`.
+*   **Interactive Analytics**: Recharts dashboards showing total scans, validation integrity ratios, processing times, and diagnostic categories.
+*   **Settings Diagnostics**: Live connection check monitoring Flask server status, Google Gemini API status, and active model names.
 
-## ⚙️ Technologies & Tools Used
-| Technology | Purpose |
-|------------|---------|
-| 🐍 **Python** | Main programming language used to build the application. |
-| 🌐 **Flask** | Web framework for handling the backend and routing. |
-| 🤖 **Google Gemini Vision** | Analyzes uploaded medical images. |
-| 🧠 **Google Gemini Pro** | Validates medical images and generates clinical descriptions. |
-| 🔗 **Google Generative AI API** | Connects the application to Google's Gemini AI models. |
-| 🖼 **Pillow (PIL)** | Processes uploaded images before AI analysis. |
-| 🔐 **python-dotenv** | Loads API keys securely from environment variables. |
-| 🎨 **HTML5 & CSS3** | Builds the user interface. |
-| 📦 **pip** | Installs and manages project dependencies. |
-| 📝 **Git & GitHub** | Version control and project hosting. |
-| 💻 **VS Code** | IDE used for development and debugging. |
+---
 
+## ⚙️ Technologies & Tools
+
+### Frontend (React SPA)
+*   **React.js (v19)**: Core UI framework.
+*   **Vite**: Next-generation bundler and dev server.
+*   **Tailwind CSS (v4)**: Custom theme color palettes, HSL styling, and animations.
+*   **Framer Motion**: Page transitions and stepper animations.
+*   **Recharts**: Area, bar, and pie charts.
+*   **IndexedDB**: Local browser storage for medical scans.
+*   **Axios**: REST API communication handler.
+*   **Lucide Icons**: Premium vector icons.
+
+### Backend (Flask REST API)
+*   **Flask (Python)**: Exposes endpoints (`/api/analyze` and `/api/status`) and serves SPA static bundles in production.
+*   **Flask-CORS**: Enables cross-origin request routing during development.
+*   **Google GenAI SDK**: Integrates the `gemini-3.1-flash-lite` AI engine.
+*   **Pillow**: Image processing and thumbnail resizing.
+
+---
 
 ## 🔄 Workflow
+
 ```mermaid
-flowchart LR
-    A[📤 Upload Medical Image] --> B[🤖 Gemini Vision Analysis]
-    B --> C[✅ Medical Validation]
-    C --> D[📝 Clinical Description Generation]
-    D --> E[📋 Display Results]
+flowchart TD
+    A[📤 Drag & Drop Upload / Paste] --> B[⏳ Analysis Stepper Triggered]
+    B --> C[🛡️ Automated Screening Check]
+    C -- Invalid Image --> D[❌ Non-Medical Content Rejected]
+    C -- Valid Image --> E[🧠 Gemini Vision Structural Analysis]
+    E --> F[📝 Sectioned Clinical Description Generated]
+    F --> G[🔊 Audio Reader / 📑 Exporters / 💡 Layman Explainer]
+    G --> H[💾 History Log Saved to Local IndexedDB]
 ```
+
+---
 
 ## 📂 Project Structure
+
 ```text
-AI-Medical-Image-Recognition/
+Modified Medicine-Recognition-System/
 │
-├── 📂 static/
-│   └── 🎨 style.css            # Application styling
+├── 📂 dist/                      # Compiled React build served by Flask in prod
+├── 📂 public/                    # Static favicon and SVG files
+├── 📂 src/
+│   ├── 📂 components/            # UI components (Navbar, Loader, Dropzone, AnalysisResult)
+│   ├── 📂 context/               # State managers (ThemeContext, HistoryContext)
+│   ├── 📂 pages/                 # Routing pages (Landing, Dashboard, History, Analytics, Settings, Profile)
+│   ├── 📂 services/              # Axios API service endpoints
+│   ├── 📂 utils/                 # Utilities (db local caching, speech TTS, pdfExporter)
+│   ├── 📄 App.jsx                # Main router entry point
+│   └── 📄 index.css              # Global styles & Tailwind v4 theme configurations
 │
-├── 📂 templates/
-│   └── 📄 index.html           # Main user interface
-│
-├── 🐍 app.py                   # Flask application entry point
-├── 🐍 next.py                  # AI processing & response generation
-├── 📦 requirements.txt         # Project dependencies
-├── 🔒 .env                     # Environment variables (not tracked)
-├── 🚫 .gitignore               # Git ignore rules
-└── 📘 README.md                # Project documentation
+├── 📄 app.py                     # Flask backend entry point and static server
+├── 📄 vite.config.js             # Vite configuration with Flask dev proxy
+├── 📄 postcss.config.js          # Tailwind build configuration
+├── 📄 tailwind.config.js         # Tailwind configuration content hooks
+├── 📄 requirements.txt           # Python backend dependencies
+└── 📄 .env                       # Local API key configurations (hidden)
 ```
 
-## 🚀 Installation
+---
+
+## 🚀 Installation & Running Local Servers
+
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/AI-Medical-Image-Recognition.git
+git clone https://github.com/saigautam3/AI-Medical-Image-Recognition.git
 cd AI-Medical-Image-Recognition
 ```
-### 2. Install Dependencies
+
+### 2. Install Project Dependencies
 ```bash
+# Python backend dependencies
 pip install -r requirements.txt
+
+# Node frontend dependencies
+npm install
 ```
-### 3. Configure Environment Variables
-Create a `.env` file and add your Google Gemini API key:
+
+### 3. Configure API Key
+Create a `.env` file in the root directory:
 ```env
-GOOGLE_API_KEY=your_api_key_here
+GOOGLE_API_KEY=your_gemini_api_key_here
 ```
-### 4. Run the Application
+
+### 4. Run Development Servers
+Start the Flask backend (Port `5000`):
 ```bash
 python app.py
 ```
-   
-## 🚀 Project Enhancements
-- 🛠 Fixed runtime issues
-- ⚡ Optimized codebase
-- ✅ Improved validation
-- 🔒 Strengthened API security
-- 🎨 Enhanced UI/UX
-- 📚 Updated documentation
+Start the React dev server (Port `5173`):
+```bash
+npm run dev
+```
+Open **[http://localhost:5173](http://localhost:5173)** in your browser.
 
-## 🚀 Future Enhancements
-- 🩺 Disease classification
-- 📄 PDF report export
-- 📝 Prescription OCR
-- 🌍 Multi-language support
-- 📊 Confidence scoring
-- ☁️ Cloud deployment
-- 📱 Mobile-friendly interface
+---
 
-# API Key Setup
-
-To use this project, you need an API key from Google Gemini Large Language Model.
-
-# Contact Details
-
-Vempala Sai Gautam - [saigautam315@gmail.com](saigautam315@gmail.com)
-
+## 👤 Developer
+**Vempala Sai Gautam** - [saigautam315@gmail.com](mailto:saigautam315@gmail.com)
